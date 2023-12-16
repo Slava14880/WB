@@ -1,3 +1,35 @@
+@font-face {
+    font-family: 'Segoe UI';
+    src: local('Segoe UI Regular'), local('Segoe-UI-Regular'),
+        url('../fonts/SegoeUI.woff2') format('woff2'),
+        url('../fonts/SegoeUI.woff') format('woff'),
+        url('../fonts/SegoeUI.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Segoe UI';
+    src: local('Segoe UI Bold'), local('Segoe-UI-Bold'),
+        url('../fonts/SegoeUI-Bold.woff2') format('woff2'),
+        url('../fonts/SegoeUI-Bold.woff') format('woff'),
+        url('../fonts/SegoeUI-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Segoe UI';
+    src: local('Segoe UI SemiBold'), local('Segoe-UI-SemiBold'),
+        url('../fonts/SegoeUI-SemiBold.woff2') format('woff2'),
+        url('../fonts/SegoeUI-SemiBold.woff') format('woff'),
+        url('../fonts/SegoeUI-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+/* ///////////////////////////// */
+
 * {
     box-sizing: border-box;
     outline: 0;
@@ -90,6 +122,23 @@ textarea {
     margin: 0 auto;
 }
 
+.shop {
+    margin: 34px 0px 0px 0px;
+    flex: 1 1 auto;
+}
+
+.total {
+    display: flex;
+    margin: 22px 0px 0px 32px;
+    padding: 16px 24px 24px 24px;
+    flex: 0 1 429px;
+    justify-content: flex-end;
+    max-height: 572px;
+    background: #FFFFFF;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15), 0px 0px 1px rgba(0, 0, 0, 0.3);
+    border-radius: 16px;
+}
+
 /* header */
 
 .header {
@@ -97,14 +146,17 @@ textarea {
     padding-bottom: 16px;
     gap: 32px;
     background-color: #6725a8;
-    max-height: 120px;
-
+    max-height: 112px;
+    height: 100%;
 }
 
 .header__container {
     display: flex;
     gap: 32px;
     margin-bottom: 16px;
+    max-height: 56px;
+    height: 100%;
+
 }
 
 
@@ -114,7 +166,7 @@ textarea {
     border: 1px solid rgba(255, 255, 255, .4);
     border-radius: 8px;
     padding: 21px 9px;
-    margin-right: 20px;
+    margin-right: 16px;
 }
 
 .list-element__burger-line {
@@ -161,8 +213,8 @@ textarea {
 
 .header__search-catalog {
     display: flex;
-    height: 48px;
-    padding: 0px 20px;
+    height: 46px;
+    padding: 0px 24px;
     align-items: center;
     flex: 1 0 0;
     border-radius: 36px;
@@ -182,32 +234,34 @@ textarea {
 
 .header__search-catalog {
     margin-bottom: 16px;
+    margin-top: 5px;
     display: flex;
     justify-content: space-between;
 }
 
-.header__svg {
-    max-width: 1400px;
+
+.header__svg__span {
+    display: flex;
+    max-width: 1920px;
+    min-width: 320px;
     width: 100%;
     height: 24px;
     border-radius: 24px 24px 0px 0px;
+    color: #f6f6fa;
     background-color: #f6f6fa;
 }
 
-/* .header::after {
-    content: '';
-    display: block;
-    width: 100%;
-    height: 24px;
-    border-radius: 24px 24px 0 0;
-    background: #f6f6fa;
-    position: absolute;
-    bottom: 302px;
-    left: 0;
-} */
+
+
+.header__nav {
+    height: 100%;
+    max-height: 56px;
+}
 
 .header__nav-bar {
-    gap: 40px;
+    gap: 42px;
+
+
 }
 
 .nav-bar {
@@ -244,6 +298,7 @@ textarea {
     font-style: normal;
     font-weight: 400;
     line-height: 16px;
+    gap: 7px;
 
 }
 
@@ -257,6 +312,7 @@ textarea {
     font-style: normal;
     font-weight: 400;
     line-height: 16px;
+    gap: 7px;
 }
 
 /* main */
@@ -271,15 +327,9 @@ textarea {
 /* hero */
 
 .hero {
-    margin-bottom: 40px;
+    margin-bottom: 38px;
     max-width: 981px;
     width: 100%;
-}
-
-.flex__two-class {
-    display: flex;
-    justify-content: space-between;
-    gap: 32px;
 }
 
 .accordion {
@@ -287,19 +337,17 @@ textarea {
     justify-content: space-between;
 }
 
-
 .basket-list__accordion__1 {
     max-width: 891px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     display: flex;
     justify-content: space-between;
     padding-top: 11px;
     border-top: 1px solid rgba(0, 0, 0, 0.10);
-
 }
 
 .basket-list__accordion__2 {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     display: flex;
     justify-content: space-between;
 }
@@ -324,6 +372,7 @@ textarea {
 /* Стили по умолчанию */
 .default-svg {
     cursor: pointer;
+
 }
 
 /* Стили для активного состояния */
@@ -360,7 +409,7 @@ textarea {
 }
 
 .checkbox-photo {
-    margin-right: 20px;
+    margin-right: 16px;
     max-width: 72px;
     border-radius: 8px;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.05) 100%), url(<path-to-image>), lightgray 50% / cover no-repeat;
@@ -371,10 +420,22 @@ textarea {
     width: 100%;
 }
 
-.accordion-left {
-    max-width: 397px;
+.accordion-left__1 {
+    max-width: 656px;
     width: 100%;
 }
+
+.accordion-left__2 {
+    max-width: 656px;
+    width: 100%;
+}
+
+.accordion-left__3 {
+    max-width: 656px;
+    width: 100%;
+}
+
+
 
 
 /* Чекбокс слева от фотографии */
@@ -400,6 +461,7 @@ textarea {
     font-style: normal;
     font-weight: 400;
     line-height: 24px;
+    margin-bottom: 8px;
 }
 
 .sizeAndColor__size {
@@ -409,7 +471,8 @@ textarea {
     font-style: normal;
     font-weight: 400;
     line-height: 16px;
-    margin-right: 16px;
+    margin-right: 17px;
+    margin-bottom: 8px;
 
 }
 
@@ -431,6 +494,7 @@ textarea {
     line-height: 16px;
     display: flex;
     align-items: center;
+    margin-bottom: 2px;
 }
 
 .sityAndCompany__citySecond {
@@ -442,14 +506,17 @@ textarea {
     line-height: 16px;
     display: flex;
     align-items: center;
+    margin-right: 10px;
 }
 
 /* Выпадающий блок при наведении на значек информации */
 
 .svg-container {
     position: relative;
-    display: inline-block;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
 }
 
 .info-block {
@@ -507,18 +574,36 @@ textarea {
 /* ///////////////// */
 
 
-.accordion-right {
+.accordion-right__1 {
     display: flex;
-    max-width: 226px;
+    max-width: 156px;
     width: 100%;
-    padding-top: 9px;
+    align-items: flex-start;
+    gap: 16px;
+    align-self: stretch;
+}
+
+.accordion-right__2 {
+    display: flex;
+    max-width: 153px;
+    width: 100%;
+    align-items: flex-start;
+    gap: 16px;
+    align-self: stretch;
+}
+
+
+.accordion-right__3 {
+    display: flex;
+    max-width: 153px;
+    width: 100%;
     align-items: flex-start;
     gap: 16px;
     align-self: stretch;
 }
 
 .countAndPrice__ul {
-    max-width: 110px;
+    max-width: 120px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -536,6 +621,11 @@ textarea {
 .accordion-right-left {
     display: flex;
     flex-direction: column;
+    gap: 8px;
+}
+
+.countAndPrice__count {
+    display: flex;
     align-items: flex-end;
 }
 
@@ -549,6 +639,7 @@ textarea {
     border-radius: 8px;
     background: #fff;
     border-radius: 8px;
+    padding: 0 8px 0 11px;
 }
 
 #decrementBtn1 {
@@ -577,6 +668,8 @@ textarea {
 }
 
 .price__new {
+    display: flex;
+    flex-wrap: nowrap;
     color: #000;
     font-family: Segoe UI;
     font-size: 16px;
@@ -667,7 +760,8 @@ textarea {
 /* Вторая карточка */
 
 .about-basket__title__2 {
-    max-width: 100%;
+    max-width: 275px;
+    width: 100%;
     display: grid;
     align-self: stretch;
     color: #000;
@@ -679,25 +773,24 @@ textarea {
     margin-bottom: 8px;
 }
 
-.sizeAndColor__size {
-    margin-bottom: 8px;
-}
-
-.sityAndCompany__cityFirst {
-    margin-bottom: 4px;
-}
-
-
 /* Третья карточка */
 
 .about-basket__title__3 {
-    max-width: 92%;
+    max-width: 46%;
     color: #000;
     font-family: Segoe UI;
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
     line-height: 24px;
+    margin-bottom: 7px;
+}
+
+
+.accordion-right__countAndPrice {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
 }
 
 /* Векторные картинки-избранное и удалить */
@@ -725,13 +818,11 @@ textarea {
 
 .result__container {
     display: flex;
-    padding: 16px 24px 24px 24px;
     flex-direction: column;
     align-items: center;
     gap: 24px;
     border-radius: 16px;
     background: #FFF;
-    box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.30), 0px 2px 10px 0px rgba(0, 0, 0, 0.15);
 }
 
 .result__h2 {
@@ -739,6 +830,7 @@ textarea {
     justify-content: space-between;
     align-items: flex-start;
     align-self: stretch;
+    margin-bottom: 4px;
 }
 
 .result-goods {
@@ -753,6 +845,7 @@ textarea {
     flex-direction: column;
     align-items: flex-start;
     align-self: stretch;
+    gap: 1px;
 }
 
 .result-discount {
@@ -777,6 +870,7 @@ textarea {
 .paymentByCard__top {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 7px;
 }
 
 .deliveryOnPlace__back {
@@ -814,7 +908,7 @@ textarea {
     font-style: normal;
     font-weight: 700;
     line-height: 32px;
-    letter-spacing: -0.24px;
+    letter-spacing: -0.7px;
 }
 
 .result-style {
@@ -833,7 +927,14 @@ textarea {
     font-style: normal;
     font-weight: 700;
     line-height: 24px;
+    margin-bottom: 3px;
+}
 
+.deliveryAddress {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 13px;
 }
 
 .deliveryAddress__address {
@@ -901,9 +1002,10 @@ textarea {
     font-style: normal;
     font-weight: 400;
     line-height: 16px;
-    background-image: url("../img/mir-pay.jpg");
+    background-image: url(../img/mir-pay.jpg);
     background-repeat: no-repeat;
-    margin-bottom: 12px;
+    background-position: -1px -3px;
+    margin-bottom: 7px;
 }
 
 .paymentByCard__label {
@@ -979,7 +1081,7 @@ textarea {
 
 .order__button-style {
     display: flex;
-    height: 44px;
+    height: 39px;
     padding: 0px 32px 5px 32px;
     flex-direction: column;
     justify-content: center;
@@ -1048,6 +1150,15 @@ textarea {
     max-width: 891px;
 }
 
+.failOfGoods__title {
+    color: #000;
+    font-family: Segoe UI;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+}
+
 .failOfGoods__titleContainer {
     display: flex;
     justify-content: space-between;
@@ -1089,8 +1200,7 @@ textarea {
 
 .countAndPrice__smallImg {
     display: flex;
-    width: 226px;
-    padding-top: 9px;
+    width: 99px;
     align-items: flex-start;
     gap: 16px;
     align-self: stretch;
@@ -1207,6 +1317,16 @@ textarea {
 }
 
 
+.right-fail {
+    display: flex;
+    max-width: 226px;
+    width: 100%;
+    align-items: flex-start;
+    gap: 16px;
+    align-self: stretch;
+    padding-top: 12px;
+}
+
 /* delivery */
 
 .delivery {
@@ -1214,9 +1334,9 @@ textarea {
 }
 
 .delivery__container {
-    max-width: 840px;
+    max-width: 891px;
     display: flex;
-    padding: 16px 24px 24px 24px;
+    padding: 23px 24px 27px 24px;
     flex-direction: column;
     gap: 16px;
     align-self: stretch;
@@ -1238,6 +1358,7 @@ textarea {
     align-items: flex-start;
     gap: 32px;
     align-self: stretch;
+    margin-bottom: 5px;
 }
 
 .contents__selected-address {
@@ -1308,6 +1429,8 @@ textarea {
 }
 
 .contents__info-date__1 {
+    max-width: 103px;
+    width: 100%;
     display: flex;
     height: 56px;
     flex-direction: column;
@@ -1387,6 +1510,13 @@ textarea {
 .delivery-free__text {
     display: flex;
     align-items: center;
+    color: #000;
+    font-family: Segoe UI;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px;
+    gap: 9px;
 }
 
 .data-delivery {
@@ -1450,12 +1580,12 @@ textarea {
 }
 
 .payment-method__style {
-    max-width: 843px;
+    max-width: 891px;
     display: flex;
     padding: 16px 24px 24px 24px;
     flex-direction: column;
     align-items: flex-start;
-    gap: 8px;
+    gap: 11px;
     align-self: stretch;
     border-radius: 16px;
     background: #FFF;
@@ -1475,15 +1605,20 @@ textarea {
     background: rgba(5, 0, 10, 0.30);
 }
 
+.modal_body {
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 30px;
+}
+
 .modal_content {
     display: flex;
-    max-width: 400px;
-    z-index: 9999;
+    width: 400px;
     flex-direction: column;
     align-items: flex-start;
     position: absolute;
-    left: 312px;
-    top: 179.5px;
     border-radius: 16px;
     background: #fff;
     box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.20);
@@ -1534,34 +1669,103 @@ textarea {
     letter-spacing: -0.2px;
 }
 
+.radio {
+    position: relative;
+}
+
+.radio__input {
+    position: absolute;
+}
+
+.radio__input:checked+.radio__label:before {
+    border: none;
+}
+
+.radio__label:before {
+    content: "";
+    height: 16px;
+    width: 16px;
+    display: block;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    background-color: #FFFFFF;
+    position: absolute;
+    top: -9px;
+    left: 0;
+    z-index: 1;
+}
+
+.radio__input:checked+.radio__label:after {
+    opacity: 1;
+}
+
+.radio__label::after {
+    content: "";
+    height: 16px;
+    width: 16px;
+    display: block;
+    background: url(../img/payment-method__radio.jpg) no-repeat;
+    background-size: 16px 16px;
+    opacity: 0;
+    position: absolute;
+    top: -9px;
+    left: 0;
+    z-index: 2;
+}
+
+.mirModal__text {
+    background-image: url("../img/mir-pay.jpg");
+    background-repeat: no-repeat;
+    padding-left: 36px;
+    margin: 0 4px 0 20px;
+
+}
+
+.visaModal__text {
+    background-image: url("../img/visa.jpg");
+    background-repeat: no-repeat;
+    padding-left: 36px;
+    margin: 0 4px 0 20px;
+}
+
+.mastercardModal__text {
+    background-image: url("../img/mastercard.jpg");
+    background-repeat: no-repeat;
+    padding-left: 36px;
+    margin: 0 4px 0 20px;
+}
+
+.maestroModal__text {
+    background-image: url("../img/maestro.jpg");
+    background-repeat: no-repeat;
+    padding-left: 36px;
+    margin: 0 4px 0 20px;
+}
+
+
 .card__number__modal {
     display: flex;
     padding: 0px 22px 123px 22px;
     flex-direction: column;
-    align-items: center;
-    gap: 24px;
+    gap: 16px;
     align-self: stretch;
 }
+
+
+.button__modal {
+    max-width: 164px;
+    margin: 16px 24px 24px 24px;
+    justify-content: center;
+}
+
 
 .button-style__modal {
     display: flex;
-    padding: 16px 24px 24px 24px;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-    align-self: stretch;
-}
-
-.button__modal {
-    display: flex;
-    height: 44px;
-    padding: 0px 48px 5px 48px;
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
-    border-radius: 8px;
+    padding: 7.5px 32px 12.5px;
     background: #CB11AB;
-    box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+    margin-bottom: 12px;
     color: #FFF;
     text-align: center;
     font-family: Segoe UI;
@@ -1582,13 +1786,15 @@ textarea {
 }
 
 .card__number {
-    background-image: url("../img/mir-pay.jpg");
+    background-image: url(../img/mir-pay.jpg);
     background-repeat: no-repeat;
-    padding-left: 38px;
+    background-position: 1px 6px;
+    padding-left: 40px;
     display: flex;
     align-items: flex-start;
-    gap: 12px;
+    gap: 13px;
     align-self: stretch;
+    padding-top: 10px;
 }
 
 .payForGoods__text {
@@ -1603,19 +1809,18 @@ textarea {
 
 /*recipient*/
 .recipient {
-    margin-bottom: 50px;
+
     background-color: #f6f6fa;
 }
 
 
-
 .recipient__style {
-    max-width: 843px;
+
     display: flex;
-    padding: 16px 24px 24px 24px;
+    padding: 15px 24px 24px 24px;
     flex-direction: column;
     align-items: flex-start;
-    gap: 16px;
+    gap: 12px;
     align-self: stretch;
     border-radius: 16px;
     background: #FFF;
@@ -1631,40 +1836,154 @@ textarea {
     letter-spacing: -0.24px;
 }
 
-.recipient__form {
+.receiver__top {
+    max-width: 700px;
+    display: flex;
+    font-size: 16px;
+    line-height: 24px;
+    color: #A0A0A4;
+    margin-bottom: 9px;
+
+}
+
+
+
+.size-placeholder::-webkit-input-placeholder {
+    font-size: 16px;
+}
+
+.receiver__name {
+    margin-right: 24px;
+    width: 100%;
+}
+
+.receiver__surename {
+    width: 100%;
+}
+
+
+.receiver__bottom {
+    display: flex;
     max-width: 700px;
 }
 
-.flex-container {
-    display: flex;
-    flex-wrap: wrap;
+.receiver__name-form,
+.receiver__surename-form,
+.receiver__last-form,
+.receiver__tel-form,
+.receiver__email-form {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    width: 100%;
 }
 
-.flex-container input {
-    flex: 1;
+.receiver__email {
     margin-right: 24px;
-    padding-bottom: 3px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.20);
-
-    /* Расстояние между инпутами, на ваш выбор */
+    width: 100%;
 }
 
-.recipient_phone {
-    transition: all 0.3s;
-    /* Добавляем плавный переход */
+.receiver__tel {
+    margin-right: 24px;
+    width: 100%;
 }
 
-.recipient_phone:valid:not(:placeholder-shown) {
-    font-size: 14px;
-    /* Размер шрифта для введенного текста */
-    margin-top: -10px;
-    /* Настройте отступ вверх от input */
+.receiver__last {
+    width: 100%;
 }
 
-.column {
+.receiver__texts {
+    font-size: 12px;
+    line-height: 14px;
+}
+
+.receiver__last-text {
+    font-size: 12px;
+    line-height: 14px;
+    width: 180px;
+}
+
+.content-block__img.margin-none {
+    margin: 0px 16px 0px 0px;
+}
+
+.indent {
     display: flex;
-    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    position: relative;
 }
+
+.icon_1s {
+    margin: 0px 36px 0px 0px;
+    position: absolute;
+    top: 0;
+}
+
+.icon_2s {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.red2 {
+    opacity: 0;
+}
+
+.icon_1s:hover.red2 {
+    opacity: 1;
+}
+
+.icon_1s:hover {
+    opacity: 0;
+}
+
+.icon_2s:hover.red2 {
+    opacity: 1;
+}
+
+.icon_2s:hover {
+    opacity: 0;
+}
+
+.receiver__last-title,
+.receiver__tel-title,
+.receiver__email-title,
+.receiver__surename-title,
+.receiver__name-title {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.receiver__inn-err,
+.receiver__tel-err,
+.receiver__email-err,
+.receiver__surename-err,
+.receiver__name-err {
+    color: #F55123;
+    font-size: 12px;
+    line-height: 14px;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.add-weight {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    margin: 0;
+}
+
+.add-marg {
+    margin: -6px 0 0 0;
+}
+
+.receiver__name-title {
+    display: block;
+}
+
+.add-margin_foot {
+    margin-bottom: 38px;
+}
+
 
 /* footer */
 
@@ -1684,12 +2003,13 @@ textarea {
 }
 
 .footer__border {
-    max-width: 100%;
-    max-height: 100%;
-    align-self: stretch;
-    fill: #6725A8;
-    background: #f6f6fa;
-
+    display: flex;
+    max-width: 1920px;
+    min-width: 320px;
+    width: 100%;
+    height: 24px;
+    border-radius: 0px 0px 24px 24px;
+    background-color: #f6f6fa;
 }
 
 .footer__text {

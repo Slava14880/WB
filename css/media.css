@@ -1,7 +1,18 @@
-@media (max-width: 320px) {
-    .contents {
-        display: flex;
-        flex-direction: column;
+@media (max-width: 1024px) {
+    .shop {
+        margin: 10px 0px 0px 0px;
+        flex: 1 1 auto;
+    }
+
+    .total {
+        margin: 0px 0px 0px 41px;
+        flex: 1 1 378px;
+
+    }
+
+
+    .about-basket__title__3 {
+        max-width: 78%;
     }
 
 }
