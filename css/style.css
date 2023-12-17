@@ -1809,14 +1809,13 @@ textarea {
 
 /*recipient*/
 .recipient {
-
     background-color: #f6f6fa;
 }
 
 
 .recipient__style {
-
     display: flex;
+    max-width: 891px;
     padding: 15px 24px 24px 24px;
     flex-direction: column;
     align-items: flex-start;
